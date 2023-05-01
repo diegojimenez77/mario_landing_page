@@ -29,6 +29,7 @@ svg {
     background-size: 32px 32px;
     background-position: 0 0, 16px 16px;
     background-color: #302f2f;
+    position: relative;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -36,8 +37,8 @@ svg {
 
 .menu {
     width: 95%;
-    margin-inline: auto;
     padding-block: 10px;
+    margin-inline: auto;
     display: flex;
     flex-direction: column;
 }
@@ -57,14 +58,22 @@ svg {
     font-weight: 900;
     font-size: 18px;
     border: 3px solid white;
-    padding: 5px;
-    border-radius: 8px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .logo img {
-     width: 40px;
-     height: 40px;
+     width: 50px;
+     height: 50px;
      cursor: pointer;
+     border-radius: 10px;
+}
+
+.logo a:hover{
+    background-color:  rgba(165, 162, 162, 0.289);
+}
+.logo img:hover{
+    background-color:  rgba(165, 162, 162, 0.289);
 }
 @media (min-width: 768px) {
     .logo img{
@@ -96,16 +105,16 @@ svg {
 }
 
 .navegacion--lista{
-    padding-block: 10px;
+    padding-block: 30px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap:10px;
 }
 @media(min-width:768px) {
-    .navegacion{
-        flex-direction: column;
+    .navegacion--lista{
+        flex-direction: row;
         padding-block: 0;
     }
 }
@@ -124,7 +133,7 @@ svg {
 }
 
 .navegacion--lista li a:hover{
-    background-color: rgba(0,0,0,0.539);
+    background-color: rgba(165, 162, 162, 0.289);
     color: white;
 }
 
@@ -185,7 +194,7 @@ svg {
 
 .banner--info a:hover{
     transform: scale(1.2);
-    background-color: #302f2f;
+    background-color: blue;
     color: white;
     border-color: white;
 }
@@ -437,10 +446,10 @@ background-size: 160px 160px;
     color: white;
     padding-block: 20px;
     display:flex;
-    align-items:center;
     flex-direction:column;
+    align-items:center;
     gap: 20px;
-    width: 100%;
+    width: 90%;
     margin-inline: auto;
     justify-content: space-between;
 }
