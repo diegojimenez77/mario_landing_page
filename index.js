@@ -10,3 +10,13 @@ btnMenu.addEventListener('click', ()=> {
     }
     navegacion.classList.toggle('navegacion--dinamico');
 });
+
+//seleccion
+const imagenes = document.querySelectorAll('.personaje--seleccionar');
+const imagenActual = document.getElementById('imagen--actual');
+
+imagenes.forEach(selector=>{
+    selector.addEventListener('click', ()=>{
+        imagenActual.src = selector.src.replace('png','webp');
+    });
+});

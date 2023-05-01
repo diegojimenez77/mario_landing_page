@@ -248,13 +248,12 @@ svg {
 
 /*Main*/
 .personajes{
-    background-color: red;
     margin-top: -10px;
     padding: 50px;
-    overflow: hidden;
     background-image: radial-gradient(rgba(41, 40, 40, 0.15) 2px, transparent 2px);
     background-size: 32px 32px;
     background-color: #ffffff;
+    overflow: hidden;
 }
 
 .personajes h2 {
@@ -297,10 +296,159 @@ svg {
     transition: all .3s ease;
 }
 .card picture:first-child img{
-    box-shadow: 0 60px 60px -60px rgba(41, 40, 40, 0.15);
+    box-shadow: 0 60px 60px -60px rgba(0, 30, 255, 0.5);
     border-radius: 4px;
 }
 
 .card picture:last-child img{
-    position: abosolute;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    width: 80%;
+    margin-inline:auto;
+    transition:all .5s ease;
+}
+.card::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #E70112;
+    background: linear-gradient(to bottom, transparent 10%, rgba(0,0,0,0.626) 97%, rgb(129, 128, 128) 100%);
+    transition: all .8s ease;
+    opacity: 0;
+}
+
+.card:hover{
+    transform:
+    perspective(250px)
+    rotateX(30deg)
+    translateY(-5%)
+    translateZ(0);
+}
+.card:hover::before{
+    opacity: 1;
+}
+
+.card:hover picture:last-child img{
+    transform:
+    perspective(10px)
+    rotateX(-1deg)
+    translateY(-5%)
+    translateZ(0);
+}
+
+/*Seleccion de imagenes*/
+.seleccion{
+    background:
+      	conic-gradient(at 10% 50%,#0000 75%,#302f2f 0),
+      	conic-gradient(at 10% 50%,#0000 75%,#302f2f 0) calc(1*32px) calc(3*32px),
+      	conic-gradient(at 10% 50%,#0000 75%,#302f2f 0) calc(2*32px) calc(1*32px),
+      	conic-gradient(at 10% 50%,#0000 75%,#302f2f 0) calc(3*32px) calc(4*32px),
+      	conic-gradient(at 10% 50%,#0000 75%,#302f2f 0) calc(4*32px) calc(2*32px),
+      	conic-gradient(at 50% 10%,#0000 75%,#302f2f 0) 0 calc(4*32px),
+      	conic-gradient(at 50% 10%,#0000 75%,#302f2f 0) calc(1*32px) calc(2*32px),
+      	conic-gradient(at 50% 10%,#0000 75%,#302f2f 0) calc(2*32px) 0,
+      	conic-gradient(at 50% 10%,#0000 75%,#302f2f 0) calc(3*32px) calc(3*32px),
+      	conic-gradient(at 50% 10%,#0000 75%,#302f2f 0) calc(4*32px) calc(1*32px),
+      	#2a2929;
+    background-size: 160px 160px;
+    padding: 20px;
+    overflow: hidden;
+}
+.seleccion h2{
+    color: white;
+    text-align:center;
+    padding: 20px;
+}
+
+.seleccion--container{
+    width: 90%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    gap: 20px;
+}
+@media (min-width:768px){
+    .seleccion--container{
+        flex-direction:row;
+    }
+}
+#imagen--actual{
+    min-width:200px;
+    min-height: 200px;
+    object-fit: contain;
+}
+.imagenes--personajes{
+    display:flex;
+}
+.imagenes--personajes img{
+    width: 100px;
+    height:100px;
+    object-fit:contain;
+    transition: all .5s ease;
+}
+.imagenes--personajes img:hover{
+    transform:scale(1.2);
+    cursor: pointer;
+}
+.potencial{
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+}
+.potencial h3 {
+    color: white;
+    padding: 10px;
+}
+.potencial--info{
+    color: #ff4747;
+}
+.porcentaje{
+    color: white;
+    text-align: end;
+    width:100%;
+    background-color: #E70112;
+    border-radius: 5px;
+    padding:5px;
+}
+/*Footer*/
+.footer{
+    background:
+    conic-gradient(at 10% 50%,#0000 75%,#302f2f 0),
+    conic-gradient(at 10% 50%,#0000 75%,#302f2f 0) calc(1*32px) calc(3*32px),
+    conic-gradient(at 10% 50%,#0000 75%,#302f2f 0) calc(2*32px) calc(1*32px),
+    conic-gradient(at 10% 50%,#0000 75%,#302f2f 0) calc(3*32px) calc(4*32px),
+    conic-gradient(at 10% 50%,#0000 75%,#302f2f 0) calc(4*32px) calc(2*32px),
+    conic-gradient(at 50% 10%,#0000 75%,#302f2f 0) 0 calc(4*32px),
+    conic-gradient(at 50% 10%,#0000 75%,#302f2f 0) calc(1*32px) calc(2*32px),
+    conic-gradient(at 50% 10%,#0000 75%,#302f2f 0) calc(2*32px) 0,
+    conic-gradient(at 50% 10%,#0000 75%,#302f2f 0) calc(3*32px) calc(3*32px),
+    conic-gradient(at 50% 10%,#0000 75%,#302f2f 0) calc(4*32px) calc(1*32px),
+    #2a2929;
+background-size: 160px 160px;
+}
+
+.footer--contenedor{
+    border-top: 5px solid red;
+    color: white;
+    padding-block: 20px;
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    gap: 20px;
+    width: 100%;
+    margin-inline: auto;
+    justify-content: space-between;
+}
+@media (min-width: 768px){
+    .footer--contenedor{
+        flex-direction:row;
+    }
+}
+.navegacion--footer{
+    gap:10px;
 }
